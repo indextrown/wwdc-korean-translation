@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WWDC 한글 번역 설정</title>
+    <link rel="stylesheet" href="./options.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="header">
+        <h1>WWDC 한글 번역</h1>
+        <p>번역 제공자와 자막 표시 방식을 설정합니다.</p>
+      </header>
+
+      <form id="settings-form" class="panel">
+        <section>
+          <h2>기본 설정</h2>
+          <label class="row checkbox-row">
+            <input id="enabled" type="checkbox" />
+            <span>자막 켜기</span>
+          </label>
+
+          <label class="row">
+            <span>번역 API</span>
+            <select id="provider">
+              <option value="chrome_builtin">Chrome 내장 번역</option>
+              <option value="azure_translator">Azure AI Translator</option>
+              <option value="google_cloud">Google Cloud Translation</option>
+              <option value="deepl">DeepL</option>
+              <option value="papago">NAVER Cloud Papago</option>
+              <option value="aws_translate">AWS Translate</option>
+              <option value="libretranslate">LibreTranslate</option>
+            </select>
+          </label>
+
+          <label class="row">
+            <span>자막 모드</span>
+            <select id="subtitleMode">
+              <option value="ko_en">한국어 + 영어</option>
+              <option value="ko_only">한국어만</option>
+              <option value="en_only">영어만</option>
+            </select>
+          </label>
+
+          <label class="row">
+            <span>한국어 위치</span>
+            <select id="subtitleLineOrder">
+              <option value="ko_above">영어 위</option>
+              <option value="ko_below">영어 아래</option>
+            </select>
+          </label>
+
+          <label class="row">
+            <span>전체 자막 크기</span>
+            <input id="fontScale" type="range" min="0.7" max="1.6" step="0.05" />
+          </label>
+
+          <label class="row">
+            <span>한국어 글자 크기</span>
+            <input id="koreanFontScale" type="range" min="0.7" max="1.8" step="0.05" />
+          </label>
+
+          <label class="row">
+            <span>영어 글자 크기</span>
+            <input id="englishFontScale" type="range" min="0.7" max="1.8" step="0.05" />
+          </label>
+
+          <label class="row">
+            <span>자막 위치</span>
+            <input id="verticalPosition" type="range" min="6" max="34" step="1" />
+          </label>
+        </section>
+
+        <section>
+          <h2>API 키</h2>
+          <div class="grid">
+            <label>
+              <span>Azure key</span>
+              <input id="azureKey" type="password" autocomplete="off" />
+            </label>
+            <label>
+              <span>Azure region</span>
+              <input id="azureRegion" type="text" placeholder="koreacentral, eastus 등" />
+            </label>
+            <label>
+              <span>Google Cloud API key</span>
+              <input id="googleApiKey" type="password" autocomplete="off" />
+            </label>
+            <label>
+              <span>DeepL API key</span>
+              <input id="deeplApiKey" type="password" autocomplete="off" />
+            </label>
+            <label>
+              <span>Papago Client ID</span>
+              <input id="papagoClientId" type="password" autocomplete="off" />
+            </label>
+            <label>
+              <span>Papago Client Secret</span>
+              <input id="papagoClientSecret" type="password" autocomplete="off" />
+            </label>
+            <label>
+              <span>AWS Access Key ID</span>
+              <input id="awsAccessKeyId" type="password" autocomplete="off" />
+            </label>
+            <label>
+              <span>AWS Secret Access Key</span>
+              <input id="awsSecretAccessKey" type="password" autocomplete="off" />
+            </label>
+            <label>
+              <span>AWS Region</span>
+              <input id="awsRegion" type="text" placeholder="us-east-1" />
+            </label>
+            <label>
+              <span>LibreTranslate endpoint</span>
+              <input id="libreTranslateEndpoint" type="url" placeholder="https://libretranslate.com" />
+            </label>
+            <label>
+              <span>LibreTranslate API key</span>
+              <input id="libreTranslateApiKey" type="password" autocomplete="off" />
+            </label>
+          </div>
+        </section>
+
+        <footer class="actions">
+          <button type="submit">저장</button>
+          <span id="status" role="status"></span>
+        </footer>
+      </form>
+    </main>
+    <script type="module" src="./options.js"></script>
+  </body>
+</html>

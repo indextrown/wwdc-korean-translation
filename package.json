@@ -1,0 +1,19 @@
+{
+  "name": "wwdc-korean-translation",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/generate-icons.mjs && tsc --noEmit && node scripts/build.mjs",
+    "icons": "node scripts/generate-icons.mjs",
+    "store:screenshot": "sh scripts/store-screenshot.sh",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "esbuild": "^0.25.5",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.4"
+  }
+}

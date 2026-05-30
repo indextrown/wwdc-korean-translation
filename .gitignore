@@ -1,0 +1,23 @@
+.DS_Store
+
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+*.zip
+
+# Local env / secrets
+.env
+.env.*
+
+# Test / coverage outputs
+coverage/
+.vitest/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*

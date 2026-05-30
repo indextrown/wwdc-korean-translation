@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WWDC 한글 번역</title>
+    <link rel="stylesheet" href="./popup.css" />
+  </head>
+  <body>
+    <main>
+      <h1>WWDC 한글 번역</h1>
+      <label class="toggle">
+        <input id="enabled" type="checkbox" />
+        <span>자막 켜기 <span class="shortcut"><span>Mac</span><kbd>⌥⇧S</kbd><span>Win</span><kbd>Alt+Shift+S</kbd></span></span>
+      </label>
+      <label>
+        <span>번역 API</span>
+        <select id="provider">
+          <option value="chrome_builtin">Chrome 내장 번역</option>
+          <option value="azure_translator">Azure</option>
+          <option value="google_cloud">Google</option>
+          <option value="deepl">DeepL</option>
+          <option value="papago">Papago</option>
+          <option value="aws_translate">AWS</option>
+          <option value="libretranslate">LibreTranslate</option>
+        </select>
+      </label>
+      <label>
+        <span>표시</span>
+        <select id="subtitleMode">
+          <option value="ko_en">한국어 + 영어</option>
+          <option value="ko_only">한국어만</option>
+          <option value="en_only">영어만</option>
+        </select>
+      </label>
+      <label>
+        <span>한국어 위치</span>
+        <select id="subtitleLineOrder">
+          <option value="ko_above">영어 위</option>
+          <option value="ko_below">영어 아래</option>
+        </select>
+      </label>
+      <fieldset>
+        <legend>자막 조절</legend>
+        <label>
+          <span>전체 크기 <output id="fontScaleValue"></output></span>
+          <input id="fontScale" type="range" min="0.7" max="1.6" step="0.05" />
+        </label>
+        <label>
+          <span>한국어 크기 <output id="koreanFontScaleValue"></output></span>
+          <input id="koreanFontScale" type="range" min="0.7" max="1.8" step="0.05" />
+        </label>
+        <label>
+          <span>영어 크기 <output id="englishFontScaleValue"></output></span>
+          <input id="englishFontScale" type="range" min="0.7" max="1.8" step="0.05" />
+        </label>
+        <label>
+          <span>위아래 위치 <output id="verticalPositionValue"></output></span>
+          <input id="verticalPosition" type="range" min="6" max="34" step="1" />
+        </label>
+      </fieldset>
+      <button id="subtitleFullscreen" type="button">자막 전체화면 <span class="shortcut"><span>Mac</span><kbd>⌥⇧F</kbd><span>Win</span><kbd>Alt+Shift+F</kbd></span></button>
+      <button id="openOptions" type="button">API 키 설정</button>
+      <p id="status"></p>
+    </main>
+    <script type="module" src="./popup.js"></script>
+  </body>
+</html>
